@@ -20,10 +20,10 @@ export default function Home() {
       <div className="flex relative justify-center top-50 w-240 mx-auto">
         <h2 className="font-light text-white/80 text-[22px] text-center">Eliminate your feeling of falling behind with simple day-to-day tracking to reach your goals, from dominating your training to mastering your work and building a winning streak. </h2>
       </div>
-      <div className="flex relative justify-center flex-col top-57 w-23 h-13 mx-auto">
-        <a href="/login" className="relative bg-gradient-to-r from-violet-500 to-violet-600 px-3 py-1 text-center rounded-md text-black font-[550]">Start now
+      <div className="flex relative justify-center flex-col top-54 w-50 mx-auto">
+        <a href="/login" className="relative bg-gradient-to-r from-violet-500 to-violet-600 px-3 py-2 text-center rounded-md text-black font-[550]">Start your progress now
         </a>
-        <h3 className="text-md relative w-70 right-12 top-1.5">Vector is free for everyone.</h3>
+        <h3 className="text-md relative w-70 left-2 top-2 opacity-80">Vector is free for everyone.</h3>
       </div>
     </div>
   );
