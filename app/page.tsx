@@ -11,7 +11,7 @@ export default function Home() {
             alt="vector"
           ></Image>
         </a>
-        <a href="/login" className="border relative bg-gradient-to-r from-violet-500 to-violet-600 w-30 h-11 text-center pt-2 rounded-md top-7.5 left-285 text-black font-[550]">Start for free
+        <a href="/login" className="relative bg-gradient-to-r from-violet-500 to-violet-600 w-30 h-11 text-center pt-2 rounded-md top-7.5 left-285 text-black font-[550]">Start for free
         </a> {/* login */}
       </div>
       <div className="flex relative justify-center top-45 w-220 mx-auto">
@@ -19,6 +19,11 @@ export default function Home() {
       </div>
       <div className="flex relative justify-center top-50 w-240 mx-auto">
         <h2 className="font-light text-white/80 text-[22px] text-center">Eliminate your feeling of falling behind with simple day-to-day tracking to reach your goals, from dominating your training to mastering your work and building a winning streak. </h2>
+      </div>
+      <div className="flex relative justify-center flex-col top-57 w-23 h-13 mx-auto">
+        <a href="/login" className="relative bg-gradient-to-r from-violet-500 to-violet-600 px-3 py-1 text-center rounded-md text-black font-[550]">Start now
+        </a>
+        <h3 className="text-md relative w-70 right-12 top-1.5">Vector is free for everyone.</h3>
       </div>
     </div>
   );
