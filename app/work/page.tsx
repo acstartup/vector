@@ -24,8 +24,8 @@ export default function Home() {
 
             <div className="flex flex-col gap-3 pt-[90px]">
                 <a
-                    href="/dashboard/"
-                    className="bg-[#753B95] w-14 h-14 rounded-2xl grid place-items-center pb-0.5">
+                    href="../dashboard/"
+                    className="bg-white/7 w-14 h-14 rounded-2xl grid place-items-center pb-0.5 hover:bg-[#753B95]/60">
                     <Image
                         className="w-8.5 h-9"
                         src={dashboard}
@@ -33,8 +33,8 @@ export default function Home() {
                     ></Image>
                 </a>
                 <a 
-                    href="../work/"
-                    className="bg-white/7 w-14 h-14 rounded-2xl grid place-items-center hover:bg-[#753B95]/60">
+                    href="/work/"
+                    className="bg-[#753B95] w-14 h-14 rounded-2xl grid place-items-center">
                     <Image
                         className="w-9 h-9"
                         src={work}
@@ -54,7 +54,7 @@ export default function Home() {
                     <Image
                         className="w-9 h-9"
                         src={todo}
-                        alt="Todo"
+                        alt="todo"
                     ></Image>
                 </a>
                 <a 
@@ -62,7 +62,7 @@ export default function Home() {
                     <Image
                         className="w-9 h-9"
                         src={weight}
-                        alt="Weight"
+                        alt="weight"
                     ></Image>
                 </a>
                 <div className="flex flex-col pt-47 gap-3">
@@ -70,14 +70,14 @@ export default function Home() {
                         <Image
                             className="w-9 h-9"
                             src={setting}
-                            alt="Setting"
+                            alt="setting"
                         ></Image>
                     </a>
                     <a className="bg-white/7 w-14 h-14 rounded-2xl grid place-items-center hover:bg-[#753B95]/60">
                         <Image
                             className="w-9 h-9"
                             src={logout}
-                            alt="Logout"
+                            alt="logout"
                         ></Image>
                     </a>
                 </div>
