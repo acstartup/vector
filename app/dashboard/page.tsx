@@ -42,6 +42,7 @@ export default function Home() {
                     ></Image>
                 </a>
                 <a 
+                    href="../lift/"
                     className="bg-white/7 w-14 h-14 rounded-2xl grid place-items-center hover:bg-[#753B95]/60">
                     <Image
                         className="w-9 h-9"
@@ -50,6 +51,7 @@ export default function Home() {
                     ></Image>
                 </a>
                 <a 
+                    href="../todo/"
                     className="bg-white/7 w-14 h-14 rounded-2xl grid place-items-center hover:bg-[#753B95]/60">
                     <Image
                         className="w-9 h-9"
@@ -58,6 +60,7 @@ export default function Home() {
                     ></Image>
                 </a>
                 <a 
+                    href="../weight/"
                     className="bg-white/7 w-14 h-14 rounded-2xl grid place-items-center hover:bg-[#753B95]/60">
                     <Image
                         className="w-9 h-9"
@@ -66,7 +69,9 @@ export default function Home() {
                     ></Image>
                 </a>
                 <div className="flex flex-col pt-47 gap-3">
-                    <a className="bg-white/7 w-14 h-14 rounded-2xl grid place-items-center pl-1 hover:bg-[#753B95]/60">
+                    <a 
+                        href="../setting/"
+                        className="bg-white/7 w-14 h-14 rounded-2xl grid place-items-center pl-1 hover:bg-[#753B95]/60">
                         <Image
                             className="w-9 h-9"
                             src={setting}

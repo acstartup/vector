@@ -33,8 +33,8 @@ export default function Home() {
                     ></Image>
                 </a>
                 <a 
-                    href="/work/"
-                    className="bg-[#753B95] w-14 h-14 rounded-2xl grid place-items-center">
+                    href="../work/"
+                    className="bg-white/7 w-14 h-14 rounded-2xl grid place-items-center hover:bg-[#753B95]/60">
                     <Image
                         className="w-9 h-9"
                         src={work}
@@ -42,16 +42,16 @@ export default function Home() {
                     ></Image>
                 </a>
                 <a 
-                    href="../lift/"
-                    className="bg-white/7 w-14 h-14 rounded-2xl grid place-items-center hover:bg-[#753B95]/60">
+                    href="/lift/"
+                    className="bg-[#753B95] w-14 h-14 rounded-2xl grid place-items-center">
                     <Image
                         className="w-9 h-9"
                         src={lift}
                         alt="Lift"
                     ></Image>
                 </a>
-                <a
-                    href="../todo/" 
+                <a 
+                    href="../todo/"
                     className="bg-white/7 w-14 h-14 rounded-2xl grid place-items-center hover:bg-[#753B95]/60">
                     <Image
                         className="w-9 h-9"
