@@ -4,6 +4,9 @@ import dashboard from "../../public/vector-dashboard.png"
 import work from "../../public/vector-work.png"
 import lift from "../../public/vector-lift.png"
 import todo from "../../public/vector-todo.png"
+import weight from "../../public/vector-weight.png"
+import setting from "../../public/vector-setting.png"
+import logout from "../../public/vector-logout.png"
 
 export default function Home() {
     return (
@@ -15,7 +18,7 @@ export default function Home() {
                         alt="Vector."
                     ></Image>
                 </a>
-                <a className="bg-gray-100/30 w-14 h-14 rounded-2xl">
+                <a className="bg-white/7 w-14 h-14 rounded-2xl">
                 </a>
             </div>
 
@@ -52,10 +55,29 @@ export default function Home() {
                         alt="todo"
                     ></Image>
                 </a>
-                <a className="bg-gray-100/30 w-14 h-14 rounded-2xl"></a>
+                <a 
+                    className="bg-white/7 w-14 h-14 rounded-2xl grid place-items-center hover:bg-[#753B95]/60">
+                    <Image
+                        className="w-9 h-9"
+                        src={weight}
+                        alt="weight"
+                    ></Image>
+                </a>
                 <div className="flex flex-col pt-47 gap-3">
-                    <a className="bg-gray-100/30 w-14 h-14 rounded-2xl"></a>
-                    <a className="bg-gray-100/30 w-14 h-14 rounded-2xl"></a>
+                    <a className="bg-white/7 w-14 h-14 rounded-2xl grid place-items-center pl-1 hover:bg-[#753B95]/60">
+                        <Image
+                            className="w-9 h-9"
+                            src={setting}
+                            alt="setting"
+                        ></Image>
+                    </a>
+                    <a className="bg-white/7 w-14 h-14 rounded-2xl grid place-items-center hover:bg-[#753B95]/60">
+                        <Image
+                            className="w-9 h-9"
+                            src={logout}
+                            alt="logout"
+                        ></Image>
+                    </a>
                 </div>
             </div>
         </div>
