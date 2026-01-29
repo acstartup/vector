@@ -159,7 +159,10 @@ export default function Home() {
                                 <h3 className="w-30">of daily tasks completed</h3>
                             </div>
                         </div>
-                        <div className="bg-white/10 w-146 h-105 rounded-3xl"></div>
+                        <div className="bg-white/10 w-146 h-105 rounded-3xl">
+                            <div className="mt-[12px] px-[17px]">
+                                <h1 className="">Notes</h1>
+                        </div></div>
                     </div>
                 </div>
             </div>
