@@ -89,10 +89,66 @@ export default function Home() {
                 </div>
                 <div className="flex-1"> {/* dashboard page, flex-1 means a new organization */}
                     <div className="flex mt-[90px] ml-[65px] gap-6">
-                        <div className="bg-white/10 w-70 h-45 rounded-4xl"></div>
-                        <div className="bg-white/10 w-70 h-45 rounded-4xl"></div>
-                        <div className="bg-white/10 w-70 h-45 rounded-4xl"></div>
-                        <div className="bg-white/10 w-70 h-45 rounded-4xl"></div>
+                        <div className="bg-white/10 w-70 h-45 rounded-3xl">
+                            <div className="mt-[12px] px-[17px]">
+                                <div className="flex justify-between">
+                                    <h1 className="">Work</h1>
+                                    <div className="flex flex-row gap-1 items-center">
+                                        <a className="text-xs bg-white text-black font-semibold px-[4px] py-[3px] rounded-lg outline-[0.5] outline-black">TDY</a>
+                                        <a className="text-xs bg-white/5 font-semibold px-[6px] py-[3px] rounded-lg outline-[0.5] outline-black">WK</a>
+                                        <a className="text-xs bg-white/5 font-semibold px-[7px] py-[3px] rounded-lg outline-[0.5] outline-black">MT</a>
+                                        <a className="text-xs bg-white/5 font-semibold px-[7px] py-[3px] rounded-lg outline-[0.5] outline-black">YR</a>
+                                    </div>
+                                </div>
+                                <h2 className="mt-[15px] text-6xl">23/40</h2>
+                                <h3 className="">hours</h3>
+                            </div>
+                        </div>
+                        <div className="bg-white/10 w-70 h-45 rounded-3xl">
+                            <div className="mt-[12px] px-[17px]">
+                                <div className="flex justify-between">
+                                    <h1 className="">Lift</h1>
+                                    <div className="flex flex-row gap-1 items-center">
+                                        <a className="text-xs bg-white/5 font-semibold px-[4px] py-[3px] rounded-lg outline-[0.5] outline-black">TDY</a>
+                                        <a className="text-xs bg-white text-black font-semibold px-[6px] py-[3px] rounded-lg outline-[0.5] outline-black">WK</a>
+                                        <a className="text-xs bg-white/5 font-semibold px-[7px] py-[3px] rounded-lg outline-[0.5] outline-black">MT</a>
+                                        <a className="text-xs bg-white/5 font-semibold px-[7px] py-[3px] rounded-lg outline-[0.5] outline-black">YR</a>
+                                    </div>
+                                </div>
+                                <h2 className="mt-[15px] text-6xl">32/35</h2>
+                                <h3 className="">sessions</h3>
+                            </div>
+                        </div>
+                        <div className="bg-white/10 w-70 h-45 rounded-3xl">
+                            <div className="mt-[12px] px-[17px]">
+                                <div className="flex justify-between">
+                                    <h1 className="">Habit</h1>
+                                    <div className="flex flex-row gap-1 items-center">
+                                        <a className="text-xs bg-white text-black font-semibold px-[4px] py-[3px] rounded-lg outline-[0.5] outline-black">TDY</a>
+                                        <a className="text-xs bg-white/5 font-semibold px-[6px] py-[3px] rounded-lg outline-[0.5] outline-black">WK</a>
+                                        <a className="text-xs bg-white/5 font-semibold px-[7px] py-[3px] rounded-lg outline-[0.5] outline-black">MT</a>
+                                        <a className="text-xs bg-white/5 font-semibold px-[7px] py-[3px] rounded-lg outline-[0.5] outline-black">YR</a>
+                                    </div>
+                                </div>
+                                <h2 className="mt-[15px] text-6xl">2</h2>
+                                <h3 className="">complete</h3>
+                            </div>
+                        </div>
+                        <div className="bg-white/10 w-70 h-45 rounded-3xl">
+                            <div className="mt-[12px] px-[17px]">
+                                <div className="flex justify-between">
+                                    <h1 className="">Weight</h1>
+                                    <div className="flex flex-row gap-1 items-center">
+                                        <a className="text-xs bg-white text-black font-semibold px-[4px] py-[3px] rounded-lg outline-[0.5] outline-black">TDY</a>
+                                        <a className="text-xs bg-white/5 font-semibold px-[6px] py-[3px] rounded-lg outline-[0.5] outline-black">WK</a>
+                                        <a className="text-xs bg-white/5 font-semibold px-[7px] py-[3px] rounded-lg outline-[0.5] outline-black">MT</a>
+                                        <a className="text-xs bg-white/5 font-semibold px-[7px] py-[3px] rounded-lg outline-[0.5] outline-black">YR</a>
+                                    </div>
+                                </div>
+                                <h2 className="mt-[15px] text-6xl">-1.2</h2>
+                                <h3 className="">pounds (lbs)</h3>
+                            </div>
+                        </div>
                     </div>
 
                     <div className="flex mt-[20px] ml-[65px] gap-6">
