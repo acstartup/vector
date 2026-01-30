@@ -91,7 +91,7 @@ export default function Home() {
                 </div>
 
                 <div className="flex flex-row gap-6 mt-[90px] ml-[65px]">
-                    <div className="bg-white/10 w-200 h-155 rounded-4xl">
+                    <div className="bg-white/10 w-200 h-155 rounded-3xl">
                         <div className="mt-[12px] px-[19px]">
                             <div className="flex justify-between">
                                 <h1 className="">Work Hours</h1>
@@ -105,14 +105,14 @@ export default function Home() {
                         </div>
                     </div>
                     <div className="flex flex-col gap-3">
-                        <div className="bg-white/10 w-10 h-10 px-[5px] py-[3.5px] rounded-xl">
+                        <div className="bg-white/10 w-10 h-10 px-[5px] py-[3.5px] rounded-2xl">
                             <Image
                                 className="w-8 h-8"
                                 src={add}
                                 alt="Add"
                             ></Image>
                         </div>
-                        <div className="bg-white/10 w-92 h-142 rounded-4xl"></div>
+                        <div className="bg-white/10 w-92 h-142 rounded-3xl"></div>
                     </div>
                 </div>
             </div>
