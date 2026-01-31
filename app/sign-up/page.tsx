@@ -12,7 +12,7 @@ export default function Home() {
     const [password, setPassword ] = useState("");
 
     const atleast8Chars = password.length > 8; {/* returns boolean value to atleast8Chars */}
-    const specialSymbol = /[!@#$%^&*(){}[];:'"`~=+-_|]/.test(password)
+    const specialSymbol = /[^a-zA-Z0-9]/.test(password); {/* ^ means not, so if password has something that is not a lowercase, uppercase, or number, it will return true */}
 
     return (
         <div className="overflow-y-hidden min-h-screen">
