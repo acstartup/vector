@@ -9,6 +9,8 @@ import circle from "../../public/vector-circle.png"
 import eye from "../../public/vector-eye.png"
 import { Fascinate } from "next/font/google";
 
+import { supabase } from "@/lib/supabase-client"
+
 export default function Home() {
     const [username, setUsername ] = useState("");
     const [password, setPassword ] = useState("");
@@ -24,10 +26,14 @@ export default function Home() {
     const [passMatch, setPassMatch] = useState(false);
     const [zero, setZero] = useState(false);
     const [user, setUser] = useState(false);
+    const [success, setSuccess] = useState(false);
+    const [fail, setFail] = useState(false);
 
     const allParameters = (atleast8Chars && specialSymbol && uppercase && lowercase && numbers);
 
-    const handleSignUp = () => {
+    const handleSignUp = async (e: React.FormEvent) => {
+        e.preventDefault()
+
         const match = (password === confirmPassword);
         {/* check all password parameters are passed */}
         if (username.length === 0) {
@@ -44,14 +50,24 @@ export default function Home() {
             setShowError(true);
             return;
         }
-        setShowError(false);
         {/* check password matches confirm password */}
         if (!match && zero === false) {
             setPassMatch(true);
             return;
         }
-        setPassMatch(false);
         {/* adding user sign up to Supabase */}
+        const { data, error } = await supabase.auth.signUp({
+            email: username,
+            password: password,
+        });
+
+        if (error) {
+            console.error(error);
+            setFail(true);
+            return;
+        }
+
+        setSuccess(true);
     }
 
     return (
@@ -68,6 +84,7 @@ export default function Home() {
 
                 <div className="flex flex-col pt-6 gap-4 pl-5"> {/* sign up boxes */}
                     <input
+                        onChange={(e) => setUsername(e.target.value)}
                         className="outline-white outline-[1px] bg-white/10 w-70 h-7 px-3 rounded-xl text-sm"
                         placeholder="Username"
                     ></input>
@@ -137,6 +154,8 @@ export default function Home() {
                         {zero && <h1 className="relative text-[#D03E3E] text-xs bottom-3">Password must have an input</h1>}
                         {showError && <h1 className="relative text-[#D03E3E] text-xs bottom-3">All password parameters must first be met</h1>} {/* showError conditional, only when showError is true does All password... show */}
                         {passMatch && <h1 className="relative text-[#D03E3E] text-xs bottom-3">Password must match confirm password inputs</h1>}
+                        {success && <h1 className="relative text-[#6AD03E] text-xs bottom-3">Account successfully created. Head to log in.</h1>}
+                        {fail && <h1 className="relative text-[#D03E3E] text-xs bottom-3">Account creation failed. Try again later.</h1>}
                         <button onClick={handleSignUp} className="bg-white px-2 py-1 w-18 rounded-xl text-black text-sm hover:opacity-80">
                             Sign Up
                         </button>
