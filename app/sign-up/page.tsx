@@ -28,7 +28,6 @@ export default function Home() {
             setShowError(true);
             return;
         }
-        setShowError(false);
         {/* check password matches confirm password */}
         {/* adding user sign up to Supabase */}
     }
@@ -99,7 +98,7 @@ export default function Home() {
                     </div>
                     <div className="flex flex-row relative bottom-2.5">
                         <input
-                            className="outline-white outline-[1px] bg-white/10 w-70 h-7 px-3 rounded-xl text-sm"
+                            className={`outline-[1px] bg-white/10 w-70 h-7 px-3 rounded-xl text-sm ${showError ? "outline-[#D03E3E]" : "outline-white"}`}
                             placeholder="Confirm Password"
                         ></input>
                         <button className="relative right-8">
