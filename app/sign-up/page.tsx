@@ -7,6 +7,7 @@ import x from "../../public/vector-x.png"
 import check from "../../public/vector-check.png"
 import circle from "../../public/vector-circle.png"
 import eye from "../../public/vector-eye.png"
+import { Fascinate } from "next/font/google";
 
 export default function Home() {
     const [password, setPassword ] = useState("");
@@ -17,10 +18,17 @@ export default function Home() {
     const lowercase = /[a-z]/.test(password); {/* true if their are lowercase letters */}
     const numbers = /[0-9]/.test(password); {/* true if their are numbers */}
 
+    const [showError, setShowError] = useState(false);
+
     const allParameters = (atleast8Chars && specialSymbol && uppercase && lowercase && numbers);
 
     const handleSignUp = () => {
         {/* check all password parameters are passed */}
+        if (!allParameters) {
+            setShowError(true);
+            return;
+        }
+        setShowError(false);
         {/* check password matches confirm password */}
         {/* adding user sign up to Supabase */}
     }
@@ -102,8 +110,9 @@ export default function Home() {
                             ></Image>
                         </button>
                     </div>
-                    <div className="flex justify-center relative pr-2"> {/* sign up */}
-                        <button onClick={handleSignUp} className="bg-white px-2 py-1 rounded-xl text-black text-sm hover:opacity-80">
+                    <div className="flex flex-col items-center relative pr-2"> {/* sign up */}
+                        {showError && <h1 className="relative text-[#D03E3E] text-xs bottom-3">All password parameters must first be met</h1>} {/* showError conditional, only when showError is true does All password... show */}
+                        <button onClick={handleSignUp} className="bg-white px-2 py-1 w-18 rounded-xl text-black text-sm hover:opacity-80">
                             Sign Up
                         </button>
                     </div>
