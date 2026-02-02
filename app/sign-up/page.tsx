@@ -10,6 +10,7 @@ import eye from "../../public/vector-eye.png"
 import { Fascinate } from "next/font/google";
 
 export default function Home() {
+    const [username, setUsername ] = useState("");
     const [password, setPassword ] = useState("");
     const [confirmPassword, setConfirmPassword ] = useState("");
 
@@ -22,12 +23,18 @@ export default function Home() {
     const [showError, setShowError] = useState(false);
     const [passMatch, setPassMatch] = useState(false);
     const [zero, setZero] = useState(false);
+    const [user, setUser] = useState(false);
 
     const allParameters = (atleast8Chars && specialSymbol && uppercase && lowercase && numbers);
 
     const handleSignUp = () => {
         const match = (password === confirmPassword);
         {/* check all password parameters are passed */}
+        if (username.length === 0) {
+            setUser(true);
+            return;
+        }
+
         if (password.length === 0) {
             setZero(true);
             return;
@@ -126,6 +133,7 @@ export default function Home() {
                         </button>
                     </div>
                     <div className="flex flex-col items-center relative pr-2"> {/* sign up */}
+                        {user && <h1 className="relative text-[#D03E3E] text-xs bottom-3">Must have username</h1>}
                         {zero && <h1 className="relative text-[#D03E3E] text-xs bottom-3">Password must have an input</h1>}
                         {showError && <h1 className="relative text-[#D03E3E] text-xs bottom-3">All password parameters must first be met</h1>} {/* showError conditional, only when showError is true does All password... show */}
                         {passMatch && <h1 className="relative text-[#D03E3E] text-xs bottom-3">Password must match confirm password inputs</h1>}
