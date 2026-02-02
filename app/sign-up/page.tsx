@@ -17,6 +17,12 @@ export default function Home() {
     const lowercase = /[a-z]/.test(password); {/* true if their are lowercase letters */}
     const numbers = /[0-9]/.test(password); {/* true if their are numbers */}
 
+    const handleSignUp = () => {
+        {/* check all password parameters are passed */}
+        {/* check password matches confirm password */}
+        {/* adding user sign up to Supabase */}
+    }
+
     return (
         <div className="overflow-y-hidden min-h-screen">
             <div className="flex flex-col items-center pl-1 pt-50"> {/* general positioning */}
@@ -75,7 +81,7 @@ export default function Home() {
                         <div className="flex flex-row items-baseline gap-2">
                             <Image
                                 className="w-3 h-3"
-                                src={password.length === 0 ? circle : lowercase ? check : x}
+                                src={password.length === 0 ? circle : numbers ? check : x}
                                 alt="O"
                             ></Image>
                             <h1 className={`relative text-xs bottom-0.5 ${password.length === 0 ? "" : numbers ? "text-[#6AD03E]" : "text-[#D03E3E]"} ${password.length === 0 ? "" : "font-semibold"}`}>Number (0-9)</h1>
@@ -95,7 +101,7 @@ export default function Home() {
                         </button>
                     </div>
                     <div className="flex justify-center relative pr-2"> {/* sign up */}
-                        <button className="bg-white px-2 py-1 rounded-xl text-black text-sm hover:opacity-80">
+                        <button onClick={handleSignUp} className="bg-white px-2 py-1 rounded-xl text-black text-sm hover:opacity-80">
                             Sign Up
                         </button>
                     </div>
