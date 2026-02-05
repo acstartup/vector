@@ -54,7 +54,7 @@ export default function Home() {
                     <div className="flex flex-row relative pb-6">
                         <input
                             onChange={(e) => setPassword(e.target.value)}
-                            className="outline-white outline-[1px] bg-white/10 w-70 h-7 px-3 rounded-xl text-sm"
+                            className={`outline-[1px] bg-white/10 w-70 h-7 px-3 rounded-xl text-sm ${password.length === 0 ? passwordEmpty ? "outline-[#D03E3E]" : "outline-white" : "outline-[#6AD03E]"}`}
                             placeholder="Password"
                         ></input>
                         <button className="relative right-8">
