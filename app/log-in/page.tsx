@@ -9,28 +9,27 @@ import circle from "../../public/vector-circle.png"
 import eye from "../../public/vector-eye.png"
 
 export default function Home() {
-    const [ username, setUsername ] = useState("");
+    const [ email, setEmail ] = useState("");
     const [ password, setPassword ] = useState("");
 
-    const [ usernameEmpty, setUsernameEmpty ] = useState(false);
+    const [ emailEmpty, setEmailEmpty ] = useState(false);
     const [ passwordEmpty, setPasswordEmpty ] = useState(false);
 
     const handleLogIn = async () => {
         {/* check if double empty */}
 
         {/* check if username */}
-        if (!username || !password) {
-            if (!username) {
-                setUsernameEmpty(true);
+        if (!email || !password) {
+            if (!email) {
+                setEmailEmpty(true);
             }
             if (!password) {
                 setPasswordEmpty(true);
             }
             return;
         }
-        setUsernameEmpty(false);
+        setEmailEmpty(false);
         setPasswordEmpty(false);
-
     }
 
     return (
@@ -47,8 +46,8 @@ export default function Home() {
 
                 <div className="flex flex-col pt-6 gap-4 pl-5"> {/* sign up boxes */}
                     <input
-                        onChange={(e) => setUsername(e.target.value)}
-                        className={`outline-[1px] bg-white/10 w-70 h-7 px-3 rounded-xl text-sm ${username.length === 0 ? usernameEmpty ? "outline-[#D03E3E]" : "outline-white" : "outline-[#6AD03E]"}`}
+                        onChange={(e) => setEmail(e.target.value)}
+                        className={`outline-[1px] bg-white/10 w-70 h-7 px-3 rounded-xl text-sm ${email.length === 0 ? emailEmpty ? "outline-[#D03E3E]" : "outline-white" : "outline-[#6AD03E]"}`}
                         placeholder="Username"
                     ></input>
                     <div className="flex flex-row relative pb-6">
@@ -67,7 +66,7 @@ export default function Home() {
                     </div>
                 </div>
                 <div className="flex flex-col items-center relative pl-3 pb-4"> {/* sign up */}
-                    {usernameEmpty && <h1 className="relative text-[#D03E3E] text-xs bottom-3">Must have an username input.</h1>}
+                    {emailEmpty && <h1 className="relative text-[#D03E3E] text-xs bottom-3">Must have an username input.</h1>}
                     {passwordEmpty && <h1 className="relative text-[#D03E3E] text-xs bottom-3">Must have an password input.</h1>}
                     <button 
                         onClick={handleLogIn}
