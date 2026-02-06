@@ -19,6 +19,7 @@ import notes from "../../public/vector-notes.png"
 export default function Home() {
     const [addDropdownOpen, setAddDropdownOpen] = useState(false);
     const [timeFilter, setTimeFilter] = useState("");
+    const [date, setDate] = useState(new Date().toISOString().split('T')[0]);
 
     return (
         <div className="flex flex-col">
@@ -135,7 +136,10 @@ export default function Home() {
                                             alt="cal"
                                         ></Image>
                                         <input
-                                            className="outline-[1px] text-sm outline-white bg-white/10 w-66 h-7 px-3 pl-9 rounded-xl text-sm"
+                                            type="date"
+                                            value={date}
+                                            onChange={(e) => setDate(e.target.value)}
+                                            className="outline-[1px] text-sm outline-white bg-white/10 w-66 h-7 px-3 pl-9 rounded-xl text-sm [color-scheme:dark] [&::-webkit-calendar-picker-indicator]:hidden"
                                             placeholder="Date"
                                         ></input>
                                     </div>
