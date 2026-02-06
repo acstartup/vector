@@ -117,7 +117,7 @@ export default function Home() {
                         <div className="relative">
                             <button
                                 onClick={() => setAddDropdownOpen(!addDropdownOpen)} 
-                                className="bg-white/10 w-10 h-10 px-[5px] py-[3.5px] rounded-2xl hover:bg-white/30 mb-2">
+                                className={`bg-white/10 w-10 h-10 px-[5px] py-[3.5px] rounded-2xl hover:bg-white/30 mb-2 ${addDropdownOpen ? "bg-white/30" : "bg-white/10"}`}>
                                 <Image
                                     className="w-8 h-8"
                                     src={addDropdownOpen ? minus : add}
@@ -126,7 +126,7 @@ export default function Home() {
                             </button>
 
                             {addDropdownOpen && 
-                                <div className="absolute bg-black/10 bg-white/10 backdrop-blue-lg rounded-2xl py-2.5 px-2 w-70 h-38.5">
+                                <div className="absolute bg-black/10 bg-white/20 backdrop-blue-lg rounded-2xl py-2.5 px-2 w-70 h-38.5">
                                     <div className="flex justify-between pb-2">
                                         <Image
                                             className="absolute w-9.5 px-2 py-0.5"
@@ -166,15 +166,15 @@ export default function Home() {
                                             placeholder="Notes"
                                         ></input>
                                     </div>
-                                    <div className="flex relative pl-35 gap-1 top-2.75">
+                                    <div className="flex relative pl-35 gap-1.5 top-2.75">
                                         <button 
                                             onClick={() => setAddDropdownOpen(false)}
-                                            className="bg-white text-black text-sm rounded-xl border-black border-[1] px-2 py-0.5 hover:opacity-80">
+                                            className="bg-white/20 background-blur-lg text-white text-sm rounded-xl border-white border-[1] px-2 py-0.5 hover:bg-white/30">
                                             Cancel
                                         </button>
                                         <button 
                                             /* onClick={handleWork} */
-                                            className="bg-white text-black text-sm rounded-xl border-black border-[1] px-3 py-0.5 hover:opacity-80">
+                                            className="bg-white/20 background-blur-lg text-white text-sm rounded-xl border-white border-[1] px-3 py-0.5 hover:bg-white/30">
                                             Add
                                         </button>
                                     </div>
