@@ -148,6 +148,12 @@ export default function Home() {
                                             className="outline-[1px] text-sm outline-white bg-white/10 backdrop-blur-none w-66 h-7 px-3 pl-9 rounded-xl text-sm"
                                             placeholder="Hours"
                                         ></input>
+                                        <select
+                                            className="absolute ml-47.5 mt-1 outline-[1px] outline-white bg-white/10 rounded-lg pl-1 w-17 py-0.2 text-sm"
+                                        >
+                                            <option value="hours">Hours</option>
+                                            <option value="minutes">Minutes</option>
+                                        </select>
                                     </div>
                                     <div className="flex justify-between">
                                         <Image
