@@ -20,7 +20,7 @@ import trash from "../../public/vector-trash.png"
 export default function Home() {
     const [addDropdownOpen, setAddDropdownOpen] = useState(false);
     const [date, setDate] = useState(new Date().toISOString().split('T')[0]);
-    const [exercises, setExercises] = useState<string[]>([]);
+    const [exercises, setExercises] = useState<{ name: string; weight: string; weightType: string; sets: string; reps: string }[]>([]);
 
     return (
         <div className="flex flex-col">
@@ -155,17 +155,68 @@ export default function Home() {
                                             placeholder="Session name"
                                         ></input>
                                     </div>
-                                    {exercises.map((value, index) => (
-                                        <div key={index} className="flex justify-between pb-2 pl-8">
+                                    {exercises.map((exercise, index) => (
+                                        <div key={index} className="flex items-center gap-1.5 pb-2 pl-8">
                                             <input
-                                                value={value}
+                                                value={exercise.name}
                                                 onChange={(e) => {
                                                     const updated = [...exercises];
-                                                    updated[index] = e.target.value;
+                                                    updated[index] = { ...exercise, name: e.target.value };
                                                     setExercises(updated);
                                                 }}
-                                                className="outline-[1px] text-sm outline-white bg-white/10 backdrop-blur-none w-full h-7 px-3 pl-3 rounded-xl text-sm"
+                                                className="outline-[1px] text-sm outline-white bg-white/10 backdrop-blur-none flex-1 min-w-0 h-7 px-3 pl-3 rounded-xl text-sm"
                                                 placeholder="Exercise name"
+                                            ></input>
+                                            <input
+                                                value={exercise.weight}
+                                                onChange={(e) => {
+                                                    const updated = [...exercises];
+                                                    updated[index] = { ...exercise, weight: e.target.value };
+                                                    setExercises(updated);
+                                                }}
+                                                className="shrink-0 outline-[1px] outline-white bg-white/10 rounded-lg px-2 w-12 py-0.5 text-sm text-center hover:bg-white/20"
+                                                placeholder="wt."
+                                            ></input>
+                                            <select
+                                                value={exercise.weightType}
+                                                onChange={(e) => {
+                                                    const updated = [...exercises];
+                                                    updated[index] = { ...exercise, weightType: e.target.value };
+                                                    setExercises(updated);
+                                                }}
+                                                className="shrink-0 outline-[1px] outline-white bg-white/10 rounded-lg pl-1 w-12 py-0.5 text-sm text-center hover:bg-white/20"
+                                            >
+                                                <option value="lbs">lbs</option>
+                                                <option value="kg">kg</option>
+                                            </select>
+                                            <select
+                                                value={exercise.sets}
+                                                onChange={(e) => {
+                                                    const updated = [...exercises];
+                                                    updated[index] = { ...exercise, sets: e.target.value };
+                                                    setExercises(updated);
+                                                }}
+                                                className="shrink-0 outline-[1px] outline-white bg-white/10 rounded-lg pl-1 w-14 py-0.5 text-sm text-center hover:bg-white/20"
+                                            >
+                                                <option>Sets</option>
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                                <option value="5">5</option>
+                                                <option value="6">6</option>
+                                                <option value="7">7</option>
+                                                <option value="8">8</option>
+                                            </select>
+                                            <input
+                                                value={exercise.reps}
+                                                onChange={(e) => {
+                                                    const updated = [...exercises];
+                                                    updated[index] = { ...exercise, reps: e.target.value };
+                                                    setExercises(updated);
+                                                }}
+                                                className="shrink-0 outline-[1px] outline-white bg-white/10 rounded-lg px-2 w-12 py-0.5 text-sm text-center hover:bg-white/20"
+                                                placeholder="Reps"
                                             ></input>
                                         </div>
                                     ))}
@@ -181,7 +232,7 @@ export default function Home() {
                                             ></Image>
                                         </button>
                                         <button
-                                            onClick={() => setExercises([...exercises, ""])}
+                                            onClick={() => setExercises([...exercises, { name: "", weight: "", weightType: "lbs", sets: "", reps: "" }])}
                                             className="bg-white/10 border-white border-[1] rounded-lg mb-2 hover:bg-white/40"
                                         >
                                             <Image
